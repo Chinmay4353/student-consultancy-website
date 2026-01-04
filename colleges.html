@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Colleges Page</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1173d4",
+              "primary-dark": "#0d5a9e",
+              "secondary": "#e0f2fe",
+              "accent": "#64748b",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "card-light": "#ffffff",
+              "card-dark": "#1a2633",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"],
+              "heading": ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              "DEFAULT": "1rem", 
+              "lg": "1.5rem", 
+              "xl": "2rem", 
+              "2xl": "3rem", 
+              "full": "9999px"
+            },
+            boxShadow: {
+                "soft": "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+            }
+          },
+        },
+      }
+    </script>
+<!-- Mobile menu toggle and other functionality -->
+<script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        if (menuBtn && navMenu) {
+            menuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('hidden');
+            });
+        }
+
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white transition-colors duration-200">
+<div class="relative flex h-full w-full max-w-md mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-6xl flex-col bg-background-light dark:bg-background-dark min-h-screen shadow-2xl md:shadow-none overflow-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white dark:bg-[#101922] shadow-sm px-4 py-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button id="menu-btn" class="text-[#111418] dark:text-white flex items-center justify-center p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition md:hidden">
+<span class="material-symbols-outlined text-[28px]">menu</span>
+</button>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[28px]">school</span>
+<span class="font-heading font-bold text-lg leading-tight tracking-tight">Edu<span class="text-primary">Bangalore</span></span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<a href="contact.html" class="bg-primary hover:bg-primary-dark text-white text-xs font-bold py-2 px-3 rounded-full shadow-lg shadow-blue-500/30 transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+<span>Free Counseling</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Navigation -->
+<nav id="nav-menu" class="hidden md:flex bg-white dark:bg-[#101922] border-b border-gray-200 dark:border-gray-700 px-4 py-2">
+<ul class="flex flex-col md:flex-row gap-4 md:gap-6 w-full md:justify-center">
+<li><a href="index.html" class="text-[#111418] dark:text-white hover:text-primary transition-colors font-medium">Home</a></li>
+<li><a href="colleges.html" class="text-[#111418] dark:text-white hover:text-primary transition-colors font-medium text-primary">Colleges</a></li>
+<li><a href="contact.html" class="text-[#111418] dark:text-white hover:text-primary transition-colors font-medium">Contact</a></li>
+</ul>
+</nav>
+
+<!-- Medical Colleges Header Section -->
+<div class="bg-white dark:bg-[#1a2632] px-4 pt-6 pb-2">
+    <h1 class="text-[#111418] dark:text-white tracking-tight text-[32px] font-bold leading-tight text-left">Top Medical Colleges</h1>
+    <p class="text-[#617589] dark:text-gray-400 text-base font-normal leading-normal pt-2">Comprehensive list of top recommended and affordable medical colleges across India with detailed information.</p>
+</div>
+
+<!-- Partner Universities Section -->
+<div class="w-full px-4 mt-4 mb-6">
+    <div class="bg-white dark:bg-[#22303c] p-5 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+        <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-4">Our Partner Universities</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
+            <div class="bg-secondary/30 dark:bg-gray-800 p-3 rounded-xl text-center">
+                <p class="font-medium text-[#111418] dark:text-white">VIT</p>
+            </div>
+            <div class="bg-secondary/30 dark:bg-gray-800 p-3 rounded-xl text-center">
+                <p class="font-medium text-[#111418] dark:text-white">RAMAIAH</p>
+            </div>
+            <div class="bg-secondary/30 dark:bg-gray-800 p-3 rounded-xl text-center">
+                <p class="font-medium text-[#111418] dark:text-white">CHRIST UNIVERSITY</p>
+            </div>
+            <div class="bg-secondary/30 dark:bg-gray-800 p-3 rounded-xl text-center">
+                <p class="font-medium text-[#111418] dark:text-white">MANIPAL UNIVERSITY</p>
+            </div>
+            <div class="bg-secondary/30 dark:bg-gray-800 p-3 rounded-xl text-center">
+                <p class="font-medium text-[#111418] dark:text-white">JAIN</p>
+            </div>
+            <div class="bg-secondary/30 dark:bg-gray-800 p-3 rounded-xl text-center">
+                <p class="font-medium text-[#111418] dark:text-white">AMITY UNIVERSITY</p>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+            <div class="bg-primary/10 dark:bg-primary/20 p-4 rounded-xl">
+                <p class="text-2xl font-bold text-primary">2018</p>
+                <p class="text-sm text-gray-600 dark:text-gray-300">FROM</p>
+            </div>
+            <div class="bg-primary/10 dark:bg-primary/20 p-4 rounded-xl">
+                <p class="text-2xl font-bold text-primary">3000+</p>
+                <p class="text-sm text-gray-600 dark:text-gray-300">STUDENTS</p>
+            </div>
+            <div class="bg-primary/10 dark:bg-primary/20 p-4 rounded-xl">
+                <p class="text-2xl font-bold text-primary">11</p>
+                <p class="text-sm text-gray-600 dark:text-gray-300">STATES</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Search & Filter Section -->
+<div class="bg-white dark:bg-[#101922] px-4 pb-4 pt-2 flex flex-col gap-3 shadow-sm z-40 rounded-b-xl">
+<!-- Search Bar -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-accent text-[20px]">search</span>
+</div>
+<input class="block w-full pl-10 pr-10 py-3 border-none rounded-xl bg-background-light dark:bg-[#1a2633] text-sm font-medium focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400 dark:text-white" placeholder="Search medical colleges, courses, locations..." type="text"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+<button class="bg-white dark:bg-[#2a3645] p-1.5 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 overflow-x-auto hide-scrollbar pb-1">
+<button class="flex items-center gap-1.5 bg-primary text-white px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap shadow-md shadow-blue-500/20 active-filter" data-filter="all">
+<span class="material-symbols-outlined text-[16px]">check</span>
+                    All Medical Colleges
+                </button>
+<button class="flex items-center gap-1.5 bg-background-light dark:bg-[#1a2633] border border-gray-200 dark:border-gray-700 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-gray-700 dark:text-gray-300 filter-chip" data-filter="top">
+                    Top Recommended
+                </button>
+<button class="flex items-center gap-1.5 bg-background-light dark:bg-[#1a2633] border border-gray-200 dark:border-gray-700 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-gray-700 dark:text-gray-300 filter-chip" data-filter="affordable">
+                    Affordable
+                </button>
+<button class="flex items-center gap-1.5 bg-background-light dark:bg-[#1a2633] border border-gray-200 dark:border-gray-700 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-gray-700 dark:text-gray-300 filter-chip" data-filter="bangalore">
+                    Bangalore
+                </button>
+<button class="flex items-center gap-1.5 bg-background-light dark:bg-[#1a2633] border border-gray-200 dark:border-gray-700 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-gray-700 dark:text-gray-300 filter-chip" data-filter="other">
+                    Other States
+                </button>
+</div>
+</div>
+
+<!-- Content Area -->
+<main class="flex-1 overflow-y-auto px-4 py-4 space-y-5 pb-8">
+<!-- Results Header -->
+<div class="flex items-baseline justify-between">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Showing <span class="text-[#111418] dark:text-white font-bold" id="resultCount">16</span> medical colleges</p>
+<div class="flex items-center gap-1 text-primary text-xs font-semibold cursor-pointer">
+                    Sort by: Ranking
+                    <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</div>
+</div>
+
+<!-- TOP RECOMMENDED MEDICAL COLLEGES SECTION -->
+<div class="space-y-5">
+    <h3 class="text-xl font-bold text-[#111418] dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">Top Recommended Medical Colleges</h3>
+    
+    <!-- RAMAIAH MEDICAL COLLEGE -->
+    <article class="group bg-card-light dark:bg-card-dark rounded-xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-fees="25" data-rating="4.8" data-private="yes" data-hostel="yes" data-type="top" data-location="bangalore" data-description="Ramaiah Medical College is one of the premier medical institutions in Karnataka established in 1979. Affiliated to Rajiv Gandhi University of Health Sciences, it offers MBBS, MD, MS, and various super-specialty courses. Known for its excellent infrastructure, experienced faculty, and 1250-bedded tertiary care teaching hospital." data-established="1979" data-campus="25 acres" data-students="1500+" data-affiliation="Rajiv Gandhi University of Health Sciences" data-recognition="NMC, NAAC 'A' Grade" data-annual-intake="250" data-placement="95%" data-faculty="350+">
+    <div class="relative h-44 w-full bg-gradient-to-r from-blue-600 to-blue-800">
+        <div class="absolute top-3 left-3 z-10 flex gap-2">
+            <span class="bg-white/90 backdrop-blur-sm dark:bg-black/60 text-[#111418] dark:text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">Deemed University</span>
+            <span class="bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 text-[10px] font-bold px-2 py-1 rounded-md">NMC Approved</span>
+        </div>
+        <button class="absolute top-3 right-3 z-10 bg-white/50 backdrop-blur-md p-1.5 rounded-full text-white hover:bg-white hover:text-red-500 transition-colors">
+            <span class="material-symbols-outlined text-[20px]">favorite</span>
+        </button>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <span class="material-symbols-outlined text-5xl mb-2">local_hospital</span>
+                <h2 class="text-xl font-bold">RAMAIAH MEDICAL COLLEGE</h2>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-12">
+            <div class="flex items-center gap-1 text-white/90 text-xs cursor-pointer hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                Bangalore, Karnataka
+            </div>
+        </div>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+            <h3 class="font-heading text-lg font-bold text-[#111418] dark:text-white leading-tight">Ramaiah Medical College</h3>
+            <div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/20 px-1.5 py-0.5 rounded border border-yellow-100 dark:border-yellow-900/30">
+                <span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                <span class="text-xs font-bold text-yellow-700 dark:text-yellow-500">4.8</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-1">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">MBBS Fees</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200">₹25L <span class="text-xs font-normal text-gray-500">total</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Exams</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200 truncate">NEET UG</span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+        
+    </div>
+    </article>
+
+    <!-- PES INSTITUTE OF MEDICAL SCIENCES & RESEARCH -->
+    <article class="group bg-card-light dark:bg-card-dark rounded-xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-fees="22" data-rating="4.7" data-private="yes" data-hostel="yes" data-type="top" data-location="bangalore" data-description="PES Institute of Medical Sciences & Research is a premier medical institution established in 2005. Offers MBBS, MD, MS, and diploma courses with state-of-the-art infrastructure including 850-bedded hospital, modern labs, and research facilities." data-established="2005" data-campus="30 acres" data-students="1200+" data-affiliation="Rajiv Gandhi University of Health Sciences" data-recognition="NMC, NAAC 'A+' Grade" data-annual-intake="150" data-placement="92%" data-faculty="280+">
+    <div class="relative h-44 w-full bg-gradient-to-r from-green-600 to-green-800">
+        <div class="absolute top-3 left-3 z-10 flex gap-2">
+            <span class="bg-white/90 backdrop-blur-sm dark:bg-black/60 text-[#111418] dark:text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">Private</span>
+            <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 text-[10px] font-bold px-2 py-1 rounded-md">NAAC A+</span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <span class="material-symbols-outlined text-5xl mb-2">medical_services</span>
+                <h2 class="text-xl font-bold">PES MEDICAL COLLEGE</h2>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-12">
+            <div class="flex items-center gap-1 text-white/90 text-xs">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                Bangalore, Karnataka
+            </div>
+        </div>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+            <h3 class="font-heading text-lg font-bold text-[#111418] dark:text-white leading-tight">PES Institute of Medical Sciences & Research</h3>
+            <div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/20 px-1.5 py-0.5 rounded border border-yellow-100 dark:border-yellow-900/30">
+                <span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                <span class="text-xs font-bold text-yellow-700 dark:text-yellow-500">4.7</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-1">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">MBBS Fees</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200">₹22L <span class="text-xs font-normal text-gray-500">total</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Exams</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200 truncate">NEET UG</span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+        
+    </div>
+    </article>
+
+    <!-- HASSAN INSTITUTE OF MEDICAL SCIENCE -->
+    <article class="group bg-card-light dark:bg-card-dark rounded-xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-fees="8" data-rating="4.3" data-private="no" data-hostel="yes" data-type="top" data-location="other" data-description="Hassan Institute of Medical Sciences is a government medical college established in 2006. Provides quality medical education at affordable fees with 750-bedded hospital serving Hassan district. Offers MBBS and postgraduate courses." data-established="2006" data-campus="20 acres" data-students="800+" data-affiliation="Rajiv Gandhi University of Health Sciences" data-recognition="NMC, Government" data-annual-intake="150" data-placement="85%" data-faculty="200+">
+    <div class="relative h-44 w-full bg-gradient-to-r from-red-600 to-red-800">
+        <div class="absolute top-3 left-3 z-10 flex gap-2">
+            <span class="bg-white/90 backdrop-blur-sm dark:bg-black/60 text-[#111418] dark:text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">Government</span>
+            <span class="bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 text-[10px] font-bold px-2 py-1 rounded-md">NMC Approved</span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <span class="material-symbols-outlined text-5xl mb-2">healing</span>
+                <h2 class="text-xl font-bold">HASSAN MEDICAL COLLEGE</h2>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-12">
+            <div class="flex items-center gap-1 text-white/90 text-xs">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                Hassan, Karnataka
+            </div>
+        </div>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+            <h3 class="font-heading text-lg font-bold text-[#111418] dark:text-white leading-tight">Hassan Institute of Medical Science</h3>
+            <div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/20 px-1.5 py-0.5 rounded border border-yellow-100 dark:border-yellow-900/30">
+                <span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                <span class="text-xs font-bold text-yellow-700 dark:text-yellow-500">4.3</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-1">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">MBBS Fees</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200">₹8L <span class="text-xs font-normal text-gray-500">total</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Exams</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200 truncate">NEET UG</span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+        
+    </div>
+    </article>
+
+    <!-- JIS MEDICAL COLLEGE -->
+    <article class="group bg-card-light dark:bg-card-dark rounded-xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-fees="18" data-rating="4.4" data-private="yes" data-hostel="yes" data-type="top" data-location="other" data-description="JIS Medical College is a private medical college in West Bengal established in 2015. Offers MBBS programs with modern infrastructure including 750-bedded hospital, advanced labs, and research facilities." data-established="2015" data-campus="15 acres" data-students="600+" data-affiliation="West Bengal University of Health Sciences" data-recognition="NMC, UGC" data-annual-intake="150" data-placement="88%" data-faculty="180+">
+    <div class="relative h-44 w-full bg-gradient-to-r from-purple-600 to-purple-800">
+        <div class="absolute top-3 left-3 z-10 flex gap-2">
+            <span class="bg-white/90 backdrop-blur-sm dark:bg-black/60 text-[#111418] dark:text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">Private</span>
+            <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 text-[10px] font-bold px-2 py-1 rounded-md">NMC Approved</span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <span class="material-symbols-outlined text-5xl mb-2">health_and_safety</span>
+                <h2 class="text-xl font-bold">JIS MEDICAL COLLEGE</h2>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-12">
+            <div class="flex items-center gap-1 text-white/90 text-xs">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                West Bengal
+            </div>
+        </div>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+            <h3 class="font-heading text-lg font-bold text-[#111418] dark:text-white leading-tight">JIS Medical College</h3>
+            <div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/20 px-1.5 py-0.5 rounded border border-yellow-100 dark:border-yellow-900/30">
+                <span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                <span class="text-xs font-bold text-yellow-700 dark:text-yellow-500">4.4</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-1">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">MBBS Fees</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200">₹18L <span class="text-xs font-normal text-gray-500">total</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Exams</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200 truncate">NEET UG</span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+    </div>
+    </article>
+
+    <!-- KPC MEDICAL COLLEGE -->
+    <article class="group bg-card-light dark:bg-card-dark rounded-xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-fees="20" data-rating="4.2" data-private="yes" data-hostel="yes" data-type="top" data-location="other" data-description="KPC Medical College is a premier private medical institution in West Bengal established in 2006. Offers MBBS, MD, MS courses with 850-bedded multi-specialty hospital providing quality healthcare services." data-established="2006" data-campus="18 acres" data-students="700+" data-affiliation="West Bengal University of Health Sciences" data-recognition="NMC, NAAC 'B++'" data-annual-intake="150" data-placement="90%" data-faculty="220+">
+    <div class="relative h-44 w-full bg-gradient-to-r from-teal-600 to-teal-800">
+        <div class="absolute top-3 left-3 z-10 flex gap-2">
+            <span class="bg-white/90 backdrop-blur-sm dark:bg-black/60 text-[#111418] dark:text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">Private</span>
+            <span class="bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 text-[10px] font-bold px-2 py-1 rounded-md">NAAC B++</span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <span class="material-symbols-outlined text-5xl mb-2">emergency</span>
+                <h2 class="text-xl font-bold">KPC MEDICAL COLLEGE</h2>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-12">
+            <div class="flex items-center gap-1 text-white/90 text-xs">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                West Bengal
+            </div>
+        </div>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+            <h3 class="font-heading text-lg font-bold text-[#111418] dark:text-white leading-tight">KPC Medical College</h3>
+            <div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/20 px-1.5 py-0.5 rounded border border-yellow-100 dark:border-yellow-900/30">
+                <span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                <span class="text-xs font-bold text-yellow-700 dark:text-yellow-500">4.2</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-1">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">MBBS Fees</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200">₹20L <span class="text-xs font-normal text-gray-500">total</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Exams</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200 truncate">NEET UG</span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+        
+    </div>
+    </article>
+
+    <!-- TRIPURA MEDICAL COLLEGE -->
+    <article class="group bg-card-light dark:bg-card-dark rounded-xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-fees="15" data-rating="4.1" data-private="yes" data-hostel="yes" data-type="top" data-location="other" data-description="Tripura Medical College is a private medical college established in 2005. Offers MBBS programs with 750-bedded hospital serving the northeastern region. Known for quality medical education and community healthcare services." data-established="2005" data-campus="20 acres" data-students="500+" data-affiliation="Tripura University" data-recognition="NMC, MCI" data-annual-intake="150" data-placement="82%" data-faculty="150+">
+    <div class="relative h-44 w-full bg-gradient-to-r from-orange-600 to-orange-800">
+        <div class="absolute top-3 left-3 z-10 flex gap-2">
+            <span class="bg-white/90 backdrop-blur-sm dark:bg-black/60 text-[#111418] dark:text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">Private</span>
+            <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 text-[10px] font-bold px-2 py-1 rounded-md">NMC Approved</span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <span class="material-symbols-outlined text-5xl mb-2">vaccines</span>
+                <h2 class="text-xl font-bold">TRIPURA MEDICAL COLLEGE</h2>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-12">
+            <div class="flex items-center gap-1 text-white/90 text-xs">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                Tripura
+            </div>
+        </div>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+            <h3 class="font-heading text-lg font-bold text-[#111418] dark:text-white leading-tight">Tripura Medical College</h3>
+            <div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/20 px-1.5 py-0.5 rounded border border-yellow-100 dark:border-yellow-900/30">
+                <span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                <span class="text-xs font-bold text-yellow-700 dark:text-yellow-500">4.1</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-1">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">MBBS Fees</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200">₹15L <span class="text-xs font-normal text-gray-500">total</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Exams</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200 truncate">NEET UG</span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+        
+    </div>
+    </article>
+</div>
+
+<!-- AFFORDABLE MEDICAL COLLEGES SECTION -->
+<div class="space-y-5 mt-8">
+    <h3 class="text-xl font-bold text-[#111418] dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">Affordable Medical Colleges</h3>
+
+    <!-- KIMS MEDICAL COLLEGE -->
+    <article class="group bg-card-light dark:bg-card-dark rounded-xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-fees="12" data-rating="4.0" data-private="yes" data-hostel="yes" data-type="affordable" data-location="other" data-description="KIMS Medical College in Krishnanagar offers affordable medical education with 600-bedded hospital. Established in 2009, it provides quality MBBS programs with modern facilities." data-established="2009" data-campus="12 acres" data-students="400+" data-affiliation="West Bengal University of Health Sciences" data-recognition="NMC" data-annual-intake="100" data-placement="80%" data-faculty="120+">
+    <div class="relative h-44 w-full bg-gradient-to-r from-cyan-600 to-cyan-800">
+        <div class="absolute top-3 left-3 z-10 flex gap-2">
+            <span class="bg-white/90 backdrop-blur-sm dark:bg-black/60 text-[#111418] dark:text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">Private</span>
+            <span class="bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 text-[10px] font-bold px-2 py-1 rounded-md">Affordable</span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <span class="material-symbols-outlined text-5xl mb-2">medication</span>
+                <h2 class="text-xl font-bold">KIMS MEDICAL COLLEGE</h2>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-12">
+            <div class="flex items-center gap-1 text-white/90 text-xs">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                Krishnanagar
+            </div>
+        </div>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+            <h3 class="font-heading text-lg font-bold text-[#111418] dark:text-white leading-tight">KIMS Medical College</h3>
+            <div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/20 px-1.5 py-0.5 rounded border border-yellow-100 dark:border-yellow-900/30">
+                <span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                <span class="text-xs font-bold text-yellow-700 dark:text-yellow-500">4.0</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-1">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">MBBS Fees</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200">₹12L <span class="text-xs font-normal text-gray-500">total</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Exams</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200 truncate">NEET UG</span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+        
+    </div>
+    </article>
+
+    <!-- AKASH MEDICAL COLLEGE (Bangalore) -->
+    <article class="group bg-card-light dark:bg-card-dark rounded-xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-fees="15" data-rating="4.2" data-private="yes" data-hostel="yes" data-type="affordable" data-location="bangalore" data-description="Akash Medical College in Bangalore offers quality medical education at reasonable fees. Established in 2012, it has 700-bedded hospital with modern facilities for clinical training." data-established="2012" data-campus="15 acres" data-students="550+" data-affiliation="Rajiv Gandhi University of Health Sciences" data-recognition="NMC" data-annual-intake="150" data-placement="85%" data-faculty="160+">
+    <div class="relative h-44 w-full bg-gradient-to-r from-indigo-600 to-indigo-800">
+        <div class="absolute top-3 left-3 z-10 flex gap-2">
+            <span class="bg-white/90 backdrop-blur-sm dark:bg-black/60 text-[#111418] dark:text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">Private</span>
+            <span class="bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 text-[10px] font-bold px-2 py-1 rounded-md">Affordable</span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <span class="material-symbols-outlined text-5xl mb-2">stethoscope</span>
+                <h2 class="text-xl font-bold">AKASH MEDICAL COLLEGE</h2>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-12">
+            <div class="flex items-center gap-1 text-white/90 text-xs">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                Bangalore
+            </div>
+        </div>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+            <h3 class="font-heading text-lg font-bold text-[#111418] dark:text-white leading-tight">Akash Medical College</h3>
+            <div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/20 px-1.5 py-0.5 rounded border border-yellow-100 dark:border-yellow-900/30">
+                <span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                <span class="text-xs font-bold text-yellow-700 dark:text-yellow-500">4.2</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-1">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">MBBS Fees</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200">₹15L <span class="text-xs font-normal text-gray-500">total</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Exams</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200 truncate">NEET UG</span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+        
+    </div>
+    </article>
+
+    <!-- KVS SULIYA MEDICAL COLLEGE -->
+    <article class="group bg-card-light dark:bg-card-dark rounded-xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-fees="14" data-rating="3.9" data-private="yes" data-hostel="yes" data-type="affordable" data-location="other" data-description="KVS Sulia Medical College in Mangalore offers affordable medical education with focus on rural healthcare. Established in 2010 with 500-bedded hospital serving coastal Karnataka." data-established="2010" data-campus="10 acres" data-students="350+" data-affiliation="Rajiv Gandhi University of Health Sciences" data-recognition="NMC" data-annual-intake="100" data-placement="78%" data-faculty="110+">
+    <div class="relative h-44 w-full bg-gradient-to-r from-emerald-600 to-emerald-800">
+        <div class="absolute top-3 left-3 z-10 flex gap-2">
+            <span class="bg-white/90 backdrop-blur-sm dark:bg-black/60 text-[#111418] dark:text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">Private</span>
+            <span class="bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 text-[10px] font-bold px-2 py-1 rounded-md">Budget Friendly</span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <span class="material-symbols-outlined text-5xl mb-2">sanitizer</span>
+                <h2 class="text-xl font-bold">KVS SULIA MEDICAL COLLEGE</h2>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-12">
+            <div class="flex items-center gap-1 text-white/90 text-xs">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                Mangalore
+            </div>
+        </div>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+            <h3 class="font-heading text-lg font-bold text-[#111418] dark:text-white leading-tight">KVS Sulia Medical College</h3>
+            <div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/20 px-1.5 py-0.5 rounded border border-yellow-100 dark:border-yellow-900/30">
+                <span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                <span class="text-xs font-bold text-yellow-700 dark:text-yellow-500">3.9</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-1">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">MBBS Fees</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200">₹14L <span class="text-xs font-normal text-gray-500">total</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Exams</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200 truncate">NEET UG</span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+        
+    </div>
+    </article>
+
+    <!-- JAGANNATH GUPTA MEDICAL COLLEGE -->
+    <article class="group bg-card-light dark:bg-card-dark rounded-xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-fees="13" data-rating="3.8" data-private="yes" data-hostel="yes" data-type="affordable" data-location="other" data-description="Jagannath Gupta Medical College in Kolkata offers affordable medical education with 550-bedded hospital. Focus on community medicine and public health programs." data-established="2011" data-campus="8 acres" data-students="300+" data-affiliation="West Bengal University of Health Sciences" data-recognition="NMC" data-annual-intake="100" data-placement="75%" data-faculty="100+">
+    <div class="relative h-44 w-full bg-gradient-to-r from-rose-600 to-rose-800">
+        <div class="absolute top-3 left-3 z-10 flex gap-2">
+            <span class="bg-white/90 backdrop-blur-sm dark:bg-black/60 text-[#111418] dark:text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">Private</span>
+            <span class="bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 text-[10px] font-bold px-2 py-1 rounded-md">Low Cost</span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <span class="material-symbols-outlined text-5xl mb-2">monitor_heart</span>
+                <h2 class="text-xl font-bold">JAGANNATH GUPTA MEDICAL COLLEGE</h2>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-12">
+            <div class="flex items-center gap-1 text-white/90 text-xs">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                Kolkata
+            </div>
+        </div>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+            <h3 class="font-heading text-lg font-bold text-[#111418] dark:text-white leading-tight">Jagannath Gupta Medical College</h3>
+            <div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/20 px-1.5 py-0.5 rounded border border-yellow-100 dark:border-yellow-900/30">
+                <span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                <span class="text-xs font-bold text-yellow-700 dark:text-yellow-500">3.8</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-1">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">MBBS Fees</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200">₹13L <span class="text-xs font-normal text-gray-500">total</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Exams</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200 truncate">NEET UG</span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+        
+    </div>
+    </article>
+
+    <!-- LAXMI CHANDRABANSHI MEDICAL COLLEGE -->
+    <article class="group bg-card-light dark:bg-card-dark rounded-xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-fees="11" data-rating="3.7" data-private="yes" data-hostel="yes" data-type="affordable" data-location="other" data-description="Laxmi Chandrabanshi Medical College in Jharkhand offers affordable medical education with focus on tribal healthcare. Established in 2013 with 450-bedded hospital." data-established="2013" data-campus="12 acres" data-students="250+" data-affiliation="Jharkhand University of Health Sciences" data-recognition="NMC" data-annual-intake="100" data-placement="70%" data-faculty="90+">
+    <div class="relative h-44 w-full bg-gradient-to-r from-amber-600 to-amber-800">
+        <div class="absolute top-3 left-3 z-10 flex gap-2">
+            <span class="bg-white/90 backdrop-blur-sm dark:bg-black/60 text-[#111418] dark:text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">Private</span>
+            <span class="bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 text-[10px] font-bold px-2 py-1 rounded-md">Most Affordable</span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <span class="material-symbols-outlined text-5xl mb-2">clinical_notes</span>
+                <h2 class="text-xl font-bold">LAXMI CHANDRABANSHI MEDICAL COLLEGE</h2>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-12">
+            <div class="flex items-center gap-1 text-white/90 text-xs">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                Jharkhand
+            </div>
+        </div>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+            <h3 class="font-heading text-lg font-bold text-[#111418] dark:text-white leading-tight">Laxmi Chandrabanshi Medical College</h3>
+            <div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/20 px-1.5 py-0.5 rounded border border-yellow-100 dark:border-yellow-900/30">
+                <span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                <span class="text-xs font-bold text-yellow-700 dark:text-yellow-500">3.7</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-1">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">MBBS Fees</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200">₹11L <span class="text-xs font-normal text-gray-500">total</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Exams</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200 truncate">NEET UG</span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+        <div class="flex gap-3 pt-1">
+            
+        </div>
+    </div>
+    </article>
+
+    <!-- SHREE SATYA SAI MEDICAL COLLEGE -->
+    <article class="group bg-card-light dark:bg-card-dark rounded-xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-fees="16" data-rating="4.0" data-private="yes" data-hostel="yes" data-type="affordable" data-location="other" data-description="Shree Satya Sai Medical College in Pondicherry offers quality medical education with spiritual values. Established in 2008 with 600-bedded hospital and focus on holistic healthcare." data-established="2008" data-campus="20 acres" data-students="450+" data-affiliation="Pondicherry University" data-recognition="NMC" data-annual-intake="150" data-placement="82%" data-faculty="130+">
+    <div class="relative h-44 w-full bg-gradient-to-r from-violet-600 to-violet-800">
+        <div class="absolute top-3 left-3 z-10 flex gap-2">
+            <span class="bg-white/90 backdrop-blur-sm dark:bg-black/60 text-[#111418] dark:text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">Private</span>
+            <span class="bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 text-[10px] font-bold px-2 py-1 rounded-md">Value for Money</span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <span class="material-symbols-outlined text-5xl mb-2">spa</span>
+                <h2 class="text-xl font-bold">SHREE SATYA SAI MEDICAL COLLEGE</h2>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-12">
+            <div class="flex items-center gap-1 text-white/90 text-xs">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                Pondicherry
+            </div>
+        </div>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+            <h3 class="font-heading text-lg font-bold text-[#111418] dark:text-white leading-tight">Shree Satya Sai Medical College</h3>
+            <div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/20 px-1.5 py-0.5 rounded border border-yellow-100 dark:border-yellow-900/30">
+                <span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                <span class="text-xs font-bold text-yellow-700 dark:text-yellow-500">4.0</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-1">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">MBBS Fees</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200">₹16L <span class="text-xs font-normal text-gray-500">total</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Exams</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200 truncate">NEET UG</span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+        
+    </div>
+    </article>
+
+    <!-- ACH MEDICAL COLLEGE -->
+    <article class="group bg-card-light dark:bg-card-dark rounded-xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-fees="17" data-rating="4.1" data-private="yes" data-hostel="yes" data-type="affordable" data-location="other" data-description="ACH Medical College in Chennai offers quality medical education with focus on research and innovation. Established in 2010 with 700-bedded hospital and advanced research facilities." data-established="2010" data-campus="18 acres" data-students="500+" data-affiliation="The Tamil Nadu Dr. M.G.R. Medical University" data-recognition="NMC" data-annual-intake="150" data-placement="85%" data-faculty="140+">
+    <div class="relative h-44 w-full bg-gradient-to-r from-sky-600 to-sky-800">
+        <div class="absolute top-3 left-3 z-10 flex gap-2">
+            <span class="bg-white/90 backdrop-blur-sm dark:bg-black/60 text-[#111418] dark:text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">Private</span>
+            <span class="bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 text-[10px] font-bold px-2 py-1 rounded-md">Research Focus</span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <span class="material-symbols-outlined text-5xl mb-2">biotech</span>
+                <h2 class="text-xl font-bold">ACH MEDICAL COLLEGE</h2>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-12">
+            <div class="flex items-center gap-1 text-white/90 text-xs">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                Chennai
+            </div>
+        </div>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+            <h3 class="font-heading text-lg font-bold text-[#111418] dark:text-white leading-tight">ACH Medical College</h3>
+            <div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/20 px-1.5 py-0.5 rounded border border-yellow-100 dark:border-yellow-900/30">
+                <span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                <span class="text-xs font-bold text-yellow-700 dark:text-yellow-500">4.1</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-1">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">MBBS Fees</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200">₹17L <span class="text-xs font-normal text-gray-500">total</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Exams</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200 truncate">NEET UG</span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+    </div>
+    </article>
+
+    <!-- VEDANTA MEDICAL COLLEGE -->
+    <article class="group bg-card-light dark:bg-card-dark rounded-xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-fees="14.5" data-rating="3.9" data-private="yes" data-hostel="yes" data-type="affordable" data-location="bangalore" data-description="Vedanta Medical College in Bengaluru offers affordable medical education with modern infrastructure. Established in 2014 with 550-bedded hospital and focus on community medicine." data-established="2014" data-campus="15 acres" data-students="400+" data-affiliation="Rajiv Gandhi University of Health Sciences" data-recognition="NMC" data-annual-intake="100" data-placement="80%" data-faculty="120+">
+    <div class="relative h-44 w-full bg-gradient-to-r from-lime-600 to-lime-800">
+        <div class="absolute top-3 left-3 z-10 flex gap-2">
+            <span class="bg-white/90 backdrop-blur-sm dark:bg-black/60 text-[#111418] dark:text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">Private</span>
+            <span class="bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 text-[10px] font-bold px-2 py-1 rounded-md">Economical</span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <span class="material-symbols-outlined text-5xl mb-2">psychiatry</span>
+                <h2 class="text-xl font-bold">VEDANTA MEDICAL COLLEGE</h2>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-12">
+            <div class="flex items-center gap-1 text-white/90 text-xs">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                Bengaluru
+            </div>
+        </div>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+            <h3 class="font-heading text-lg font-bold text-[#111418] dark:text-white leading-tight">Vedanta Medical College</h3>
+            <div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/20 px-1.5 py-0.5 rounded border border-yellow-100 dark:border-yellow-900/30">
+                <span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                <span class="text-xs font-bold text-yellow-700 dark:text-yellow-500">3.9</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-1">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">MBBS Fees</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200">₹14.5L <span class="text-xs font-normal text-gray-500">total</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Exams</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+                    <span class="text-sm font-semibold text-[#111418] dark:text-gray-200 truncate">NEET UG</span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+    </div>
+    </article>
+</div>
+
+</main>
+</div>
+
+<script>
+        // Filter functionality for medical colleges
+        const filterChips = document.querySelectorAll('.filter-chip');
+        const allCoursesBtn = document.querySelector('[data-filter="all"]');
+        const articles = document.querySelectorAll('main article');
+        const searchInput = document.querySelector('input[placeholder*="Search medical colleges"]');
+        const resultsText = document.querySelector('.text-gray-500.dark\\:text-gray-400.text-sm.font-medium');
+        const resultCount = document.getElementById('resultCount');
+        let activeFilters = new Set();
+
+        // Initialize with all colleges showing
+        updateResultCount();
+
+        // Performance optimizations
+        let searchTimeout;
+
+        // Debounced search functionality
+        searchInput.addEventListener('input', () => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                filterColleges();
+            }, 300);
+        });
+
+        // All Courses button
+        allCoursesBtn.addEventListener('click', () => {
+            activeFilters.clear();
+            updateFilterButtons();
+            filterColleges();
+        });
+
+        // Individual filter chips
+        filterChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                const filterType = chip.dataset.filter;
+                
+                if (activeFilters.has(filterType)) {
+                    activeFilters.delete(filterType);
+                } else {
+                    activeFilters.add(filterType);
+                }
+                
+                updateFilterButtons();
+                filterColleges();
+            });
+        });
+
+        function updateFilterButtons() {
+            // Reset all buttons to inactive state
+            filterChips.forEach(chip => {
+                chip.classList.remove('bg-primary', 'text-white', 'shadow-md', 'shadow-blue-500/20');
+                chip.classList.add('bg-background-light', 'dark:bg-[#1a2633]', 'border', 'border-gray-200', 'dark:border-gray-700', 'text-gray-700', 'dark:text-gray-300');
+            });
+            
+            // Set active state for selected filters
+            activeFilters.forEach(filterType => {
+                const chip = document.querySelector(`[data-filter="${filterType}"]`);
+                if (chip) {
+                    chip.classList.add('bg-primary', 'text-white', 'shadow-md', 'shadow-blue-500/20');
+                    chip.classList.remove('bg-background-light', 'dark:bg-[#1a2633]', 'border', 'border-gray-200', 'dark:border-gray-700', 'text-gray-700', 'dark:text-gray-300');
+                }
+            });
+            
+            // Update "All Courses" button
+            if (activeFilters.size === 0) {
+                allCoursesBtn.classList.add('bg-primary', 'text-white', 'shadow-md', 'shadow-blue-500/20');
+                allCoursesBtn.classList.remove('bg-background-light', 'dark:bg-[#1a2633]', 'border', 'border-gray-200', 'dark:border-gray-700', 'text-gray-700', 'dark:text-gray-300');
+            } else {
+                allCoursesBtn.classList.remove('bg-primary', 'text-white', 'shadow-md', 'shadow-blue-500/20');
+                allCoursesBtn.classList.add('bg-background-light', 'dark:bg-[#1a2633]', 'border', 'border-gray-200', 'dark:border-gray-700', 'text-gray-700', 'dark:text-gray-300');
+            }
+        }
+
+        function filterColleges() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            requestAnimationFrame(() => {
+                articles.forEach(article => {
+                    const collegeName = article.querySelector('h3').textContent.toLowerCase();
+                    const collegeType = article.dataset.type;
+                    const collegeLocation = article.dataset.location;
+
+                    // Check search term
+                    const matchesSearch = !searchTerm || 
+                        collegeName.includes(searchTerm) ||
+                        article.dataset.location.includes(searchTerm);
+
+                    // Check filter criteria
+                    let matchesFilter = true;
+                    if (activeFilters.size > 0) {
+                        matchesFilter = false;
+                        activeFilters.forEach(filter => {
+                            if (filter === 'top' && collegeType === 'top') matchesFilter = true;
+                            if (filter === 'affordable' && collegeType === 'affordable') matchesFilter = true;
+                            if (filter === 'bangalore' && collegeLocation === 'bangalore') matchesFilter = true;
+                            if (filter === 'other' && collegeLocation === 'other') matchesFilter = true;
+                        });
+                    }
+
+                    // Show article if it matches both search and filter
+                    const show = matchesSearch && matchesFilter;
+                    article.style.display = show ? 'flex' : 'none';
+
+                    if (show) visibleCount++;
+                });
+
+                // Update results count
+                updateResultCount(visibleCount);
+            });
+        }
+
+        function updateResultCount(count) {
+            if (resultCount) {
+                resultCount.textContent = count || articles.length;
+            }
+        }
+
+        // View Details button functionality
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('view-details') || e.target.closest('.view-details')) {
+                const article = e.target.closest('article');
+                if (article) {
+                    // Extract all college data
+                    const collegeData = {
+                        title: article.querySelector('h3').textContent,
+                        rating: article.querySelector('.bg-yellow-50 span:last-child').textContent,
+                        fees: article.querySelector('.flex.items-center.gap-1.5 span:last-child').textContent,
+                        location: article.querySelector('.text-white\\/90.text-xs span:last-child').textContent,
+                        type: article.dataset.type === 'top' ? 'Top Recommended' : 'Affordable',
+                        description: article.dataset.description,
+                        established: article.dataset.established,
+                        campus: article.dataset.campus,
+                        students: article.dataset.students,
+                        affiliation: article.dataset.affiliation,
+                        recognition: article.dataset.recognition,
+                        annualIntake: article.dataset.annualIntake,
+                        placement: article.dataset.placement,
+                        faculty: article.dataset.faculty,
+                        hostel: article.dataset.hostel === 'yes' ? 'Available' : 'Not Available',
+                        private: article.dataset.private === 'yes' ? 'Private' : 'Government'
+                    };
+
+                    // Create modal HTML
+                    const modalHTML = `
+                        <div id="college-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+                            <div class="relative max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-2xl bg-card-light dark:bg-card-dark shadow-2xl">
+                                <div class="sticky top-0 z-10 flex justify-between items-center bg-white dark:bg-[#1a2633] p-4 border-b border-gray-200 dark:border-gray-700">
+                                    <h2 class="text-2xl font-bold text-[#111418] dark:text-white">${collegeData.title}</h2>
+                                    <button onclick="this.closest('#college-modal').remove()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white">
+                                        <span class="material-symbols-outlined text-2xl">close</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="p-6">
+                                    <!-- Header Info -->
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                        <div class="space-y-3">
+                                            <div class="flex items-center gap-2">
+                                                <span class="material-symbols-outlined text-primary">star</span>
+                                                <div>
+                                                    <p class="text-sm text-gray-500 dark:text-gray-400">Rating</p>
+                                                    <p class="text-lg font-bold text-[#111418] dark:text-white">${collegeData.rating}/5.0</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="material-symbols-outlined text-primary">payments</span>
+                                                <div>
+                                                    <p class="text-sm text-gray-500 dark:text-gray-400">Total Fees (MBBS)</p>
+                                                    <p class="text-lg font-bold text-[#111418] dark:text-white">${collegeData.fees}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center gap-2">
+                                                <span class="material-symbols-outlined text-primary">location_on</span>
+                                                <div>
+                                                    <p class="text-sm text-gray-500 dark:text-gray-400">Location</p>
+                                                    <p class="text-lg font-bold text-[#111418] dark:text-white">${collegeData.location}</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="material-symbols-outlined text-primary">category</span>
+                                                <div>
+                                                    <p class="text-sm text-gray-500 dark:text-gray-400">Category</p>
+                                                    <p class="text-lg font-bold text-[#111418] dark:text-white">${collegeData.type}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- College Details -->
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                        <div class="bg-background-light dark:bg-[#1a2633] p-4 rounded-xl">
+                                            <h3 class="font-semibold text-[#111418] dark:text-white mb-3 flex items-center gap-2">
+                                                <span class="material-symbols-outlined text-primary">info</span>
+                                                College Overview
+                                            </h3>
+                                            <div class="space-y-2">
+                                                <div class="flex justify-between">
+                                                    <span class="text-sm text-gray-600 dark:text-gray-400">Established</span>
+                                                    <span class="font-semibold">${collegeData.established}</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span class="text-sm text-gray-600 dark:text-gray-400">Campus Size</span>
+                                                    <span class="font-semibold">${collegeData.campus}</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span class="text-sm text-gray-600 dark:text-gray-400">Total Students</span>
+                                                    <span class="font-semibold">${collegeData.students}</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span class="text-sm text-gray-600 dark:text-gray-400">College Type</span>
+                                                    <span class="font-semibold">${collegeData.private}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="bg-background-light dark:bg-[#1a2633] p-4 rounded-xl">
+                                            <h3 class="font-semibold text-[#111418] dark:text-white mb-3 flex items-center gap-2">
+                                                <span class="material-symbols-outlined text-primary">school</span>
+                                                Academic Details
+                                            </h3>
+                                            <div class="space-y-2">
+                                                <div class="flex justify-between">
+                                                    <span class="text-sm text-gray-600 dark:text-gray-400">Affiliation</span>
+                                                    <span class="font-semibold text-right">${collegeData.affiliation}</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span class="text-sm text-gray-600 dark:text-gray-400">Recognition</span>
+                                                    <span class="font-semibold">${collegeData.recognition}</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span class="text-sm text-gray-600 dark:text-gray-400">Annual Intake</span>
+                                                    <span class="font-semibold">${collegeData.annualIntake} students</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span class="text-sm text-gray-600 dark:text-gray-400">Hostel Facility</span>
+                                                    <span class="font-semibold">${collegeData.hostel}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Placement & Faculty -->
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                        <div class="bg-background-light dark:bg-[#1a2633] p-4 rounded-xl">
+                                            <h3 class="font-semibold text-[#111418] dark:text-white mb-3 flex items-center gap-2">
+                                                <span class="material-symbols-outlined text-primary">work</span>
+                                                Placement & Faculty
+                                            </h3>
+                                            <div class="space-y-2">
+                                                <div class="flex justify-between">
+                                                    <span class="text-sm text-gray-600 dark:text-gray-400">Placement Rate</span>
+                                                    <span class="font-semibold">${collegeData.placement}</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span class="text-sm text-gray-600 dark:text-gray-400">Total Faculty</span>
+                                                    <span class="font-semibold">${collegeData.faculty}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="bg-background-light dark:bg-[#1a2633] p-4 rounded-xl">
+                                            <h3 class="font-semibold text-[#111418] dark:text-white mb-3 flex items-center gap-2">
+                                                <span class="material-symbols-outlined text-primary">edit_note</span>
+                                                Admission Details
+                                            </h3>
+                                            <div class="space-y-2">
+                                                <div>
+                                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Eligibility Exam</p>
+                                                    <p class="font-semibold">NEET UG (National Eligibility cum Entrance Test)</p>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Course Duration</p>
+                                                    <p class="font-semibold">5.5 Years (4.5 years academic + 1 year internship)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- About College -->
+                                    <div class="bg-background-light dark:bg-[#1a2633] p-4 rounded-xl">
+                                        <h3 class="font-semibold text-[#111418] dark:text-white mb-3 flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-primary">description</span>
+                                            About College
+                                        </h3>
+                                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                            ${collegeData.description}
+                                        </p>
+                                    </div>
+
+                                    <!-- Contact Buttons -->
+                                    <div class="mt-6 flex gap-4">
+                                        <a href="contact.html" class="flex-1 bg-primary hover:bg-primary-dark text-white text-center py-3 px-4 rounded-xl text-sm font-semibold transition flex items-center justify-center gap-2">
+                                            <span class="material-symbols-outlined">calendar_month</span>
+                                            Book Free Counseling
+                                        </a>
+                                        <a href="tel:+918308468292" class="flex-1 border border-gray-300 dark:border-gray-600 text-center py-3 px-4 rounded-xl text-sm font-semibold text-[#111418] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition flex items-center justify-center gap-2">
+                                            <span class="material-symbols-outlined">call</span>
+                                            Call Now: +91 83084 68292
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    // Add modal to body
+                    document.body.insertAdjacentHTML('beforeend', modalHTML);
+                }
+            }
+        });
+
+        // Initial filter setup
+        updateFilterButtons();
+    </script>
+</body>
+</html>
