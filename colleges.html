@@ -49,15 +49,15 @@
     </script>
 <!-- Mobile menu toggle and other functionality -->
 <script>
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const navMenu = document.getElementById('nav-menu');
-        if (menuBtn && navMenu) {
-            menuBtn.addEventListener('click', () => {
-                navMenu.classList.toggle('hidden');
-            });
-        }
-
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('menu-btn');
+            const navMenu = document.getElementById('nav-menu');
+            if (menuBtn && navMenu) {
+                menuBtn.addEventListener('click', () => {
+                    navMenu.classList.toggle('hidden');
+                });
+            }
+        });
     </script>
 <style>
         body {
@@ -906,36 +906,29 @@
         const allCoursesBtn = document.querySelector('[data-filter="all"]');
         const articles = document.querySelectorAll('main article');
         const searchInput = document.querySelector('input[placeholder*="Search medical colleges"]');
-        const resultsText = document.querySelector('.text-gray-500.dark\\:text-gray-400.text-sm.font-medium');
         const resultCount = document.getElementById('resultCount');
         let activeFilters = new Set();
 
-        // Initialize with all colleges showing
-        updateResultCount();
-
-        // Performance optimizations
         let searchTimeout;
 
-        // Debounced search functionality
-        searchInput.addEventListener('input', () => {
+        searchInput?.addEventListener('input', () => {
             clearTimeout(searchTimeout);
             searchTimeout = setTimeout(() => {
                 filterColleges();
             }, 300);
         });
 
-        // All Courses button
-        allCoursesBtn.addEventListener('click', () => {
+        allCoursesBtn?.addEventListener('click', () => {
             activeFilters.clear();
             updateFilterButtons();
             filterColleges();
         });
 
-        // Individual filter chips
         filterChips.forEach(chip => {
             chip.addEventListener('click', () => {
                 const filterType = chip.dataset.filter;
-                
+                if (!filterType) return;
+
                 if (activeFilters.has(filterType)) {
                     activeFilters.delete(filterType);
                 } else {
@@ -948,13 +941,11 @@
         });
 
         function updateFilterButtons() {
-            // Reset all buttons to inactive state
             filterChips.forEach(chip => {
                 chip.classList.remove('bg-primary', 'text-white', 'shadow-md', 'shadow-blue-500/20');
                 chip.classList.add('bg-background-light', 'dark:bg-[#1a2633]', 'border', 'border-gray-200', 'dark:border-gray-700', 'text-gray-700', 'dark:text-gray-300');
             });
             
-            // Set active state for selected filters
             activeFilters.forEach(filterType => {
                 const chip = document.querySelector(`[data-filter="${filterType}"]`);
                 if (chip) {
@@ -963,7 +954,8 @@
                 }
             });
             
-            // Update "All Courses" button
+            if (!allCoursesBtn) return;
+
             if (activeFilters.size === 0) {
                 allCoursesBtn.classList.add('bg-primary', 'text-white', 'shadow-md', 'shadow-blue-500/20');
                 allCoursesBtn.classList.remove('bg-background-light', 'dark:bg-[#1a2633]', 'border', 'border-gray-200', 'dark:border-gray-700', 'text-gray-700', 'dark:text-gray-300');
@@ -974,21 +966,22 @@
         }
 
         function filterColleges() {
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            let visibleCount = 0;
+            const searchTerm = searchInput?.value.trim().toLowerCase() || '';
 
             requestAnimationFrame(() => {
+                let visibleCount = 0;
+
                 articles.forEach(article => {
-                    const collegeName = article.querySelector('h3').textContent.toLowerCase();
                     const collegeType = article.dataset.type;
                     const collegeLocation = article.dataset.location;
+                    const searchableText = [
+                        article.textContent,
+                        article.dataset.location,
+                        article.dataset.description
+                    ].join(' ').toLowerCase();
 
-                    // Check search term
-                    const matchesSearch = !searchTerm || 
-                        collegeName.includes(searchTerm) ||
-                        article.dataset.location.includes(searchTerm);
+                    const matchesSearch = !searchTerm || searchableText.includes(searchTerm);
 
-                    // Check filter criteria
                     let matchesFilter = true;
                     if (activeFilters.size > 0) {
                         matchesFilter = false;
@@ -1000,50 +993,49 @@
                         });
                     }
 
-                    // Show article if it matches both search and filter
                     const show = matchesSearch && matchesFilter;
                     article.style.display = show ? 'flex' : 'none';
 
                     if (show) visibleCount++;
                 });
 
-                // Update results count
                 updateResultCount(visibleCount);
             });
         }
 
         function updateResultCount(count) {
             if (resultCount) {
-                resultCount.textContent = count || articles.length;
+                resultCount.textContent = String(count);
             }
         }
 
-        // View Details button functionality
         document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('view-details') || e.target.closest('.view-details')) {
-                const article = e.target.closest('article');
+            const target = e.target instanceof Element ? e.target : null;
+            const detailsButton = target?.closest('.view-details');
+
+            if (detailsButton) {
+                const article = detailsButton.closest('article');
                 if (article) {
-                    // Extract all college data
+                    const getText = selector => article.querySelector(selector)?.textContent?.trim() || '';
                     const collegeData = {
-                        title: article.querySelector('h3').textContent,
-                        rating: article.querySelector('.bg-yellow-50 span:last-child').textContent,
-                        fees: article.querySelector('.flex.items-center.gap-1.5 span:last-child').textContent,
-                        location: article.querySelector('.text-white\\/90.text-xs span:last-child').textContent,
+                        title: getText('h3'),
+                        rating: getText('.bg-yellow-50 span:last-child'),
+                        fees: getText('.flex.items-center.gap-1.5 span:last-child'),
+                        location: getText('.text-white\\/90.text-xs span:last-child'),
                         type: article.dataset.type === 'top' ? 'Top Recommended' : 'Affordable',
-                        description: article.dataset.description,
-                        established: article.dataset.established,
-                        campus: article.dataset.campus,
-                        students: article.dataset.students,
-                        affiliation: article.dataset.affiliation,
-                        recognition: article.dataset.recognition,
-                        annualIntake: article.dataset.annualIntake,
-                        placement: article.dataset.placement,
-                        faculty: article.dataset.faculty,
+                        description: article.dataset.description || '',
+                        established: article.dataset.established || '',
+                        campus: article.dataset.campus || '',
+                        students: article.dataset.students || '',
+                        affiliation: article.dataset.affiliation || '',
+                        recognition: article.dataset.recognition || '',
+                        annualIntake: article.dataset.annualIntake || '',
+                        placement: article.dataset.placement || '',
+                        faculty: article.dataset.faculty || '',
                         hostel: article.dataset.hostel === 'yes' ? 'Available' : 'Not Available',
                         private: article.dataset.private === 'yes' ? 'Private' : 'Government'
                     };
 
-                    // Create modal HTML
                     const modalHTML = `
                         <div id="college-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
                             <div class="relative max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-2xl bg-card-light dark:bg-card-dark shadow-2xl">
@@ -1208,14 +1200,13 @@
                         </div>
                     `;
 
-                    // Add modal to body
                     document.body.insertAdjacentHTML('beforeend', modalHTML);
                 }
             }
         });
 
-        // Initial filter setup
         updateFilterButtons();
+        filterColleges();
     </script>
 </body>
 </html>
